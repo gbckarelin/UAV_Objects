@@ -52,10 +52,11 @@ def minimax_allocation(priority_matrix, cost_matrix):
         minimax_scores.append(minimax_score)
 
         # сортируем
-        sorted_objects = np.argsort(minimax_scores)[::-1]
-        print("Распределение БПЛА на объекты:")
-        for i in range(len(sorted_objects)):
-            print(f'БПЛА {i} -> {sorted_objects[i]}')
+    sorted_objects = np.argsort(minimax_scores)[::-1]
+    print("Распределение БПЛА на объекты:")
+    print(len(sorted_objects))
+    for i in [1,2,3,4,5,6]:
+        print(f'БПЛА {i} -> {sorted_objects[i-1]}')
 
         # Распределяем БПЛА на объекты
         allocation = np.zeros((num_objects,num_drones))
